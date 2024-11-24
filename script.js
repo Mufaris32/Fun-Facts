@@ -4,13 +4,14 @@ document.getElementById('factButton').addEventListener('click', function() {
         "Octopuses have three hearts.",
         "Bananas are berries, but strawberries aren't.",
         "A group of flamingos is called a 'flamboyance'.",
-        "More people visit France than any other country.",
-      "The longest place name in the world is Taumatawhakatangihangakoauauotamateapokaiwhenuakitanatahu, in New Zealand.",
-      "A blue whale’s heart is so big, a human could swim through its arteries. 🐋",
-      "A sneeze can travel up to 100 miles per hour. 🤧",
-      "Sharks can hear music underwater and are drawn to low-frequency sounds. 🎵🦈"
+        "More people visit France than any other country."
     ];
 
     const randomIndex = Math.floor(Math.random() * facts.length);
-    document.getElementById('factDisplay').innerText = facts[randomIndex];
+    const factDisplay = document.getElementById('factDisplay');
+    factDisplay.style.opacity = 0; // Reset opacity for fade-in effect
+    setTimeout(() => {
+        factDisplay.innerText = facts[randomIndex];
+        factDisplay.style.opacity = 1; // Fade-in effect
+    }, 100); // Short delay to reset the opacity
 });
